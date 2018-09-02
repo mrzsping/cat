@@ -1,0 +1,77 @@
+$ac: #ffc107;
+$bg: #f8a986;
+$btnBg: #fc8d59;
+$c3: #333333;
+$c6: #666666;
+$c9: #999999;
+$bc: #8dd5e5;
+$br: 5px;
+$font_HY: 'Courier New', Courier, monospace;
+$font_PF: 'Courier New', Courier, monospace;
+html, body, ul, p, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+}
+ul{
+  list-style: none;
+}
+input, button{
+  outline: none;
+  border: 0;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.mt15{
+  margin-top: 15px;
+}
+.mt25{
+  margin-top: 25px;
+}
+.mt30{
+  margin-top: 30px;
+}
+.mt60{
+  margin-top: 60px;
+}
+//按钮
+
+@mixin btn($w, $h, $f, $r: 5px) {
+  width: $w;
+  height: $h;
+  line-height: $h;
+  color: #ffffff;
+  background: $btnBg;
+  font-size: $f;
+  border-radius: $r;
+  &:hover{
+    cursor: pointer;
+  }
+}
+//字样式
+@mixin  fs($s, $ls, $fa, $fw, $c) {
+  font-size: $s;
+  letter-spacing: $ls;
+  font-family: $fa;
+  font-weight: $fw;
+  color: $c;
+}
+//注册框
+@mixin  box($w, $t) {
+  width: $w;
+  margin: $t auto;
+  text-align: center;
+  height: auto;
+}
+//全屏
+@mixin  full($b: $bg) {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: $b;
+}
