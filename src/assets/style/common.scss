@@ -54,6 +54,20 @@ a{
   height: $h;
   line-height: $h;
   color: #ffffff;
+  background: #ffffff;
+  font-size: $f;
+  border: 1px solid $btnBg;
+  border-radius: $r;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@mixin btn_s($w, $h, $f, $r: 5px) {
+  width: $w;
+  height: $h;
+  line-height: $h;
+  color: $btnBg;
   background: $btnBg;
   font-size: $f;
   border-radius: $r;

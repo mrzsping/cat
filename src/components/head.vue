@@ -47,7 +47,7 @@ export default {
 <style lang='scss'>
 .head-top{
   margin: auto;
-  @include box(1000px, 40px, 40px);
+  @include box(1200px, 40px, 40px);
   img{
     border-radius: 50%;
     vertical-align: middle;
