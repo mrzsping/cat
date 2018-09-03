@@ -1,6 +1,7 @@
 <template>
   <div class="cat-title">
-    <h1>{{titleName}}</h1>
+    <router-link to="/">
+      <h1>{{titleName}}</h1></router-link>
     <p>{{pageName}}</p>
   </div>
 </template>

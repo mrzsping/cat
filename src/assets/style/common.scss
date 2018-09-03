@@ -1,6 +1,7 @@
 $ac: #ffc107;
 $bg: #f8a986;
 $btnBg: #fc8d59;
+$pink: pink;
 $c3: #333333;
 $c6: #666666;
 $c9: #999999;
@@ -19,6 +20,9 @@ input, button{
   outline: none;
   border: 0;
 }
+a{
+  text-decoration: none;
+}
 .fl{
   float: left;
 }
@@ -36,6 +40,12 @@ input, button{
 }
 .mt60{
   margin-top: 60px;
+}
+.ml15{
+  margin-left: 15px;
+}
+.mr15{
+  margin-right: 15px;
 }
 //按钮
 
@@ -60,7 +70,7 @@ input, button{
   color: $c;
 }
 //注册框
-@mixin  box($w, $t) {
+@mixin  inputbox($w, $t) {
   width: $w;
   margin: $t auto;
   text-align: center;
@@ -74,4 +84,10 @@ input, button{
   bottom: 0;
   left: 0;
   background: $b;
+}
+//盒子快速创建
+@mixin box($w, $h, $lh){
+  width: $w;
+  height: $h;
+  line-height: $lh;
 }

@@ -29,7 +29,7 @@ export default {
   border-bottom: 2px solid #666;
   label{
     float: left;
-    width: 80px;
+    width: 105px;
     text-align: left;
     font-size: 22px;
   }

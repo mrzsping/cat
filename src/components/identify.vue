@@ -1,7 +1,7 @@
 <template>
   <div class="input-box">
-    <label for=''>{{first}}</label>
-    <input :type='inputType' :placeholder='placeholderName'>
+    <label for=''>{{name}}</label>
+    <input type="text" placeholder='请输入验证码'>
     <button>{{get}}</button>
   </div>
 </template>
@@ -10,13 +10,13 @@
 export default {
   data () {
     return {
-      get: '获取验证码'
+      get: '获取验证码',
+      name: '验证码:'
     }
   },
   components: {
 
-  },
-  props: ['first', 'placeholderName', 'inputType']
+  }
 }
 </script>
 
@@ -31,12 +31,12 @@ export default {
   border-bottom: 2px solid #666;
   label{
     float: left;
-    width: 80px;
+    width: 105px;
     text-align: left;
     font-size: 22px;
   }
   input{
-    width: 160px;
+    width: 130px;
     height: 30px;
     font-size: 18px;
   }

@@ -4,9 +4,7 @@ const home = r => require.ensure([], () => r(require('@/pages/home')), 'home')
 const index = r => require.ensure([], () => r(require('@/pages/index')), 'index')
 const login = r => require.ensure([], () => r(require('@/pages/login')), 'login')
 const signup = r => require.ensure([], () => r(require('@/pages/signup')), 'signup')
-// import home from '@/pages/home'
-// import login from '@/pages/login'
-// import signup from '@/pages/signup'
+const forget = r => require.ensure([], () => r(require('@/pages/forget')), 'forget')
 
 Vue.use(Router)
 
@@ -31,6 +29,11 @@ export default new Router({
       path: '/signup',
       name: 'signup',
       component: signup
+    },
+    {
+      path: '/forget',
+      name: 'forget',
+      component: forget
     }
   ]
 })
