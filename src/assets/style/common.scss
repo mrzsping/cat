@@ -49,11 +49,11 @@ a{
 }
 //按钮
 
-@mixin btn($w, $h, $f, $r: 5px) {
+@mixin btn_s($w, $h, $f, $r: 5px) {
   width: $w;
   height: $h;
   line-height: $h;
-  color: #ffffff;
+  color: $btnBg;
   background: #ffffff;
   font-size: $f;
   border: 1px solid $btnBg;
@@ -63,11 +63,11 @@ a{
   }
 }
 
-@mixin btn_s($w, $h, $f, $r: 5px) {
+@mixin btn($w, $h, $f, $r: 5px) {
   width: $w;
   height: $h;
   line-height: $h;
-  color: $btnBg;
+  color: #ffffff;
   background: $btnBg;
   font-size: $f;
   border-radius: $r;
