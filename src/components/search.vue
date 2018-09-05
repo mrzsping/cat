@@ -64,6 +64,8 @@ export default {
     }
   },
   components: {
+  },
+  methods: {
   }
 }
 </script>
@@ -85,6 +87,7 @@ export default {
         @include box(150px, 30px, 30px);
         margin-left: 20px;
         border: 1px solid $bc;
+        font-size: 16px;
         border-radius: 10px;
         text-indent: 10px;
       }
@@ -100,8 +103,12 @@ export default {
     }
   }
   .search-btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     button{
-      @include btn_s(50px, 30px, 16px, 5px)
+      @include btn_s(50px, 30px, 16px, 5px);
     }
   }
 }

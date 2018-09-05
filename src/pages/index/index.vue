@@ -39,6 +39,9 @@ export default {
   }
   .content{
     @include box(1200px, auto, 1);
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
     margin: auto;
     text-align: center;
     border-bottom: 1px solid $btnBg;

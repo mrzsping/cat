@@ -36,7 +36,7 @@ export default {
     font-size: 22px;
   }
   input{
-    width: 130px;
+    width: 120px;
     height: 30px;
     font-size: 18px;
   }

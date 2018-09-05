@@ -19,6 +19,7 @@ ul{
 input, button{
   outline: none;
   border: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 a{
   text-decoration: none;
@@ -105,3 +106,4 @@ a{
   height: $h;
   line-height: $lh;
 }
+//响应式：
