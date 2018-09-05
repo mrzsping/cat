@@ -49,7 +49,7 @@ a{
 }
 //按钮
 
-@mixin btn($w, $h, $f, $r: 5px) {
+@mixin btn_s($w, $h, $f, $r: 5px) {
   width: $w;
   height: $h;
   line-height: $h;
@@ -63,7 +63,7 @@ a{
   }
 }
 
-@mixin btn_s($w, $h, $f, $r: 5px) {
+@mixin btn($w, $h, $f, $r: 5px) {
   width: $w;
   height: $h;
   line-height: $h;
