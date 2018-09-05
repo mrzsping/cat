@@ -22,6 +22,24 @@ npm run unit
 
 # run all tests
 npm test
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 公益猫重构
+
+1.完成所有页面基本搭建
+
+2.事件交互
+
+3.服务器搭建
+
+4.业务处理与数据操作
+
+## 达到预期
+
+1.熟练使用：vue、vue-router、vuex、axios、node、mongodb、mongoose、express、es6
+
+2.学会使用：地图定位、echarts、单元测试、项目上线、linux、云服务、性能测试
+
+## 周期
+
+2018-09-01开始，预计一个半月
+

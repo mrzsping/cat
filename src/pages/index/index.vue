@@ -38,11 +38,16 @@ export default {
     background: url(/static/img/1.46ff16e.jpg) no-repeat 0/100%;
   }
   .content{
-    @include box(1200px, 80px, 80px);
+    @include box(1200px, auto, 1);
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
     margin: auto;
     text-align: center;
     border-bottom: 1px solid $btnBg;
     .find{
+      @include box(100%, 80px, 80px);
+      border-bottom: 2px $btnBg;
     }
   }
 }

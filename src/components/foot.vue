@@ -35,6 +35,9 @@ export default {
   background: #cb6640;
   .foot-container{
     @include box(1200px, 200px, 1);
+    @media screen and (max-width: 1200px) {
+      width: 100%;
+    }
     margin: auto;
     display: flex;
     justify-content: space-evenly;

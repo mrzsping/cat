@@ -48,6 +48,9 @@ export default {
 .head-top{
   margin: auto;
   @include box(1200px, 40px, 40px);
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
   img{
     border-radius: 50%;
     vertical-align: middle;
