@@ -105,8 +105,9 @@ export default {
   .search-btn{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: space-evenly;
+    height: 100px;
+    float: right;
     button{
       @include btn_s(50px, 30px, 16px, 5px);
     }

@@ -8,6 +8,9 @@
         <h2>寻找喵星人</h2>
       </div>
       <search></search>
+      <div class="index-list">
+
+      </div>
     </div>
     <FootBottom></FootBottom>
   </div>
@@ -17,6 +20,7 @@
 import HeadTop from '@/components/head'
 import FootBottom from '@/components/foot'
 import search from '@/components/search'
+import indexList from '@/components/indexList'
 export default {
   data () {
     return {
@@ -26,7 +30,8 @@ export default {
   components: {
     HeadTop,
     FootBottom,
-    search
+    search,
+    indexList
   }
 }
 </script>
