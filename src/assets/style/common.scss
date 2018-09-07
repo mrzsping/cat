@@ -45,9 +45,19 @@ a{
 .ml15{
   margin-left: 15px;
 }
+.ml30{
+  margin-left: 15px;
+}
 .mr15{
   margin-right: 15px;
 }
+.br{
+  border-radius: 50%;
+}
+.ti{
+  text-indent: 10px;
+}
+@import '../icons/iconfont.css';
 //按钮
 
 @mixin btn_s($w, $h, $f, $r: 5px) {

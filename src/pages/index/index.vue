@@ -1,7 +1,6 @@
 <template>
   <div class="index">
     <div class="index-head">
-      <HeadTop></HeadTop>
     </div>
     <div class="content">
       <div class="find">
@@ -9,27 +8,22 @@
       </div>
       <search></search>
       <div class="index-list">
-
+        <indexList :list="indexData" v-for="i in indexData" :key="i.id"></indexList>
       </div>
     </div>
-    <FootBottom></FootBottom>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import HeadTop from '@/components/head'
-import FootBottom from '@/components/foot'
 import search from '@/components/search'
 import indexList from '@/components/indexList'
 export default {
   data () {
     return {
-
+      indexData: [1, 2, 3, 4]
     }
   },
   components: {
-    HeadTop,
-    FootBottom,
     search,
     indexList
   }
@@ -40,7 +34,7 @@ export default {
 .index{
   .index-head{
     @include box(100%, 150px, 1);
-    background: url(/static/img/1.46ff16e.jpg) no-repeat 0/100%;
+    background: url('/static/img/1.46ff16e.jpg') no-repeat 0/100%;
   }
   .content{
     @include box(1200px, auto, 1);
@@ -53,6 +47,9 @@ export default {
     .find{
       @include box(100%, 80px, 80px);
       border-bottom: 2px $btnBg;
+    }
+    .index-list{
+      overflow: hidden;
     }
   }
 }

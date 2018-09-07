@@ -5,6 +5,7 @@ const index = r => require.ensure([], () => r(require('@/pages/index')), 'index'
 const login = r => require.ensure([], () => r(require('@/pages/login')), 'login')
 const signup = r => require.ensure([], () => r(require('@/pages/signup')), 'signup')
 const forget = r => require.ensure([], () => r(require('@/pages/forget')), 'forget')
+const community = r => require.ensure([], () => r(require('@/pages/community')), 'community')
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/forget',
       name: 'forget',
       component: forget
+    },
+    {
+      path: '/community',
+      name: 'community',
+      component: community
     }
   ]
 })

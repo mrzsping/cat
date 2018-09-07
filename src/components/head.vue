@@ -46,7 +46,9 @@ export default {
 
 <style lang='scss'>
 .head-top{
-  margin: auto;
+  position: absolute;
+  left: 50%;
+  margin-left: -600px;
   @include box(1200px, 40px, 40px);
   @media screen and (max-width: 1200px) {
     width: 100%;
