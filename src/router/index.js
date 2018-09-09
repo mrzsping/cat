@@ -9,6 +9,7 @@ const forget = r => require.ensure([], () => r(require('@/pages/forget')), 'forg
 const community = r => require.ensure([], () => r(require('@/pages/community')), 'community')
 const list = r => require.ensure([], () => r(require('@/pages/community/list')), 'list')
 const article = r => require.ensure([], () => r(require('@/pages/article')), 'article')
+const mine = r => require.ensure([], () => r(require('@/pages/mine')), 'mine')
 
 Vue.use(Router)
 
@@ -45,6 +46,11 @@ export default new Router({
               component: article
             }
           ]
+        },
+        {
+          path: '/mine',
+          name: 'mine',
+          component: mine
         }
       ]
     },
