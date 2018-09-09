@@ -7,6 +7,8 @@ const login = r => require.ensure([], () => r(require('@/pages/login')), 'login'
 const signup = r => require.ensure([], () => r(require('@/pages/signup')), 'signup')
 const forget = r => require.ensure([], () => r(require('@/pages/forget')), 'forget')
 const community = r => require.ensure([], () => r(require('@/pages/community')), 'community')
+const list = r => require.ensure([], () => r(require('@/pages/community/list')), 'list')
+const article = r => require.ensure([], () => r(require('@/pages/article')), 'article')
 
 Vue.use(Router)
 
@@ -30,7 +32,19 @@ export default new Router({
         {
           path: 'community',
           name: 'community',
-          component: community
+          component: community,
+          children: [
+            {
+              path: 'list',
+              name: 'list',
+              component: list
+            },
+            {
+              path: 'article',
+              name: 'article',
+              component: article
+            }
+          ]
         }
       ]
     },

@@ -42,7 +42,13 @@ a{
 .mt60{
   margin-top: 60px;
 }
+.ml10{
+  margin-left: 15px;
+}
 .ml15{
+  margin-left: 15px;
+}
+.ml20{
   margin-left: 15px;
 }
 .ml30{
@@ -56,6 +62,9 @@ a{
 }
 .ti{
   text-indent: 10px;
+}
+.ellips{
+  overflow: eill
 }
 @import '../icons/iconfont.css';
 //按钮
@@ -116,4 +125,7 @@ a{
   height: $h;
   line-height: $lh;
 }
-//响应式：
+@mixin con($w, $h){
+  width: $w;
+  height: $h;
+}

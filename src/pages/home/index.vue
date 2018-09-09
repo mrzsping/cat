@@ -8,7 +8,7 @@
         <router-link to="/signup">
           <button class="btn">加入我们</button>
         </router-link>
-       <router-link to="/page">
+       <router-link to="/page/index">
           <button class="btn">逛逛社区</button>
        </router-link>
       </div>

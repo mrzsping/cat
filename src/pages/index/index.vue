@@ -20,7 +20,7 @@ import indexList from '@/components/indexList'
 export default {
   data () {
     return {
-      indexData: [1, 2, 3, 4]
+      indexData: [1, 2, 3, 4, 5, 6]
     }
   },
   components: {

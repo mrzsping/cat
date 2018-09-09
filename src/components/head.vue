@@ -10,7 +10,7 @@
        <router-link to="/page/index">首页</router-link>
      </li>
      <li>
-       <router-link to="/page/community">社区</router-link>
+       <router-link to="/page/community/list">社区</router-link>
      </li>
      <li>
        <router-link to="/page/diary">日记</router-link>
@@ -47,6 +47,7 @@ export default {
 <style lang='scss'>
 .head-top{
   position: absolute;
+  top: 0;
   left: 50%;
   margin-left: -600px;
   @include box(1200px, 40px, 40px);
