@@ -39,7 +39,9 @@ npm test
 
 1.熟练使用：vue、vue-router、vuex、axios、node、mongodb、mongoose、express、es6
 
-2.学会使用：地图定位、echarts、单元测试、项目上线、linux、云服务、性能测试
+2.学会使用：地图定位、echarts、单元测试、项目上线、linux、云服务、性能测试、git
+
+3.代理
 
 ## 周期
 
