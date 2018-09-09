@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```
 # install dependencies
 npm install
 
@@ -23,9 +23,11 @@ npm run unit
 # run all tests
 npm test
 
+```
+
 ## 公益猫重构
 
-1.完成所有页面基本搭建
+1.完成所有页面基本搭建(进行中)
 
 2.事件交互
 
