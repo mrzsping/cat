@@ -1,21 +1,19 @@
 <template>
   <div id="app">
-    <headTop></headTop>
-    <div class="view">
       <router-view/>
-    </div>
-    <FootBottom></FootBottom>
+    <error></error>
   </div>
 </template>
 
 <script>
-import headTop from '@/components/head'
-import FootBottom from '@/components/foot'
+import error from '@/components/error'
 export default {
   name: 'App',
   components: {
-    headTop,
-    FootBottom
+    error
+  },
+  created () {
+    this.$root.$data.store = []
   }
 }
 </script>
@@ -23,10 +21,6 @@ export default {
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  .view{
-    width: 1200px;
-    margin: auto;
-  }
 }
 @font-face {
   font-family: catStyle;

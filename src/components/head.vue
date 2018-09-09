@@ -7,19 +7,19 @@
    </div>
    <ul class="link">
      <li class="active">
-       <router-link to="index">首页</router-link>
+       <router-link to="/page/index">首页</router-link>
      </li>
      <li>
-       <router-link to="community">社区</router-link>
+       <router-link to="/page/community">社区</router-link>
      </li>
      <li>
-       <router-link to="diary">日记</router-link>
+       <router-link to="/page/diary">日记</router-link>
      </li>
      <li>
-       <router-link to="publish">发布</router-link>
+       <router-link to="/page/publish">发布</router-link>
      </li>
      <li>
-       <router-link to="mine">我的</router-link>
+       <router-link to="/page/mine">我的</router-link>
      </li>
    </ul>
    <div class="fr">

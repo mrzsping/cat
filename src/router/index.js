@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 const home = r => require.ensure([], () => r(require('@/pages/home')), 'home')
 const index = r => require.ensure([], () => r(require('@/pages/index')), 'index')
+const page = r => require.ensure([], () => r(require('@/pages/page')), 'page')
 const login = r => require.ensure([], () => r(require('@/pages/login')), 'login')
 const signup = r => require.ensure([], () => r(require('@/pages/signup')), 'signup')
 const forget = r => require.ensure([], () => r(require('@/pages/forget')), 'forget')
@@ -17,9 +18,21 @@ export default new Router({
       component: home
     },
     {
-      path: '/index',
-      name: 'index',
-      component: index
+      path: '/page',
+      name: 'page',
+      component: page,
+      children: [
+        {
+          path: 'index',
+          name: 'index',
+          component: index
+        },
+        {
+          path: 'community',
+          name: 'community',
+          component: community
+        }
+      ]
     },
     {
       path: '/login',
@@ -35,11 +48,6 @@ export default new Router({
       path: '/forget',
       name: 'forget',
       component: forget
-    },
-    {
-      path: '/community',
-      name: 'community',
-      component: community
     }
   ]
 })
