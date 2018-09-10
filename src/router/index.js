@@ -10,6 +10,9 @@ const community = r => require.ensure([], () => r(require('@/pages/community')),
 const list = r => require.ensure([], () => r(require('@/pages/community/list')), 'list')
 const article = r => require.ensure([], () => r(require('@/pages/article')), 'article')
 const mine = r => require.ensure([], () => r(require('@/pages/mine')), 'mine')
+const diary = r => require.ensure([], () => r(require('@/pages/diary')), 'diary')
+const diaryList = r => require.ensure([], () => r(require('@/pages/diary/diaryList')), 'diary')
+const diaryEdit = r => require.ensure([], () => r(require('@/pages/diary/diaryEdit')), 'diary')
 
 Vue.use(Router)
 
@@ -44,6 +47,23 @@ export default new Router({
               path: 'article',
               name: 'article',
               component: article
+            }
+          ]
+        },
+        {
+          path: 'diary',
+          name: 'diary',
+          component: diary,
+          children: [
+            {
+              path: 'diaryList',
+              name: 'diaryList',
+              component: diaryList
+            },
+            {
+              path: ':id/edit',
+              name: 'edit',
+              component: diaryEdit
             }
           ]
         },

@@ -13,7 +13,7 @@
        <router-link to="/page/community/list">社区</router-link>
      </li>
      <li>
-       <router-link to="/page/diary">日记</router-link>
+       <router-link to="/page/diary/diaryList">日记</router-link>
      </li>
      <li>
        <router-link to="/page/publish">发布</router-link>

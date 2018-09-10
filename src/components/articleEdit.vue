@@ -14,6 +14,7 @@
           <li> <img src="@/assets/images/1.jpg" alt="" width="80px" height="80px"></li>
           <li> <img src="@/assets/images/1.jpg" alt="" width="80px" height="80px"></li>
         </ul>
+        <slot name="apply"></slot>
       </div>
       <slot name="num"></slot>
     </div>
@@ -35,6 +36,7 @@ export default {
 <style lang='scss'>
 .community-edit{
   @include box(1000px, auto, 1);
+  text-align: left;
   margin: 20px 0;
   .community-edit_wrapper{
     >p{

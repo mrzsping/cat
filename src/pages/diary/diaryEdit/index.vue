@@ -1,29 +1,33 @@
 <template>
   <div>
-    <communityList v-for="x in list" :key="x.id">
+    <articleEdit>
+      <button slot="apply" class="look">查看喵星人主人</button>
       <commentNum slot="num"></commentNum>
       <comment slot="comment"></comment>
-    </communityList>
+    </articleEdit>
   </div>
 </template>
 
-<script>
-import communityList from '@/components/communityList'
+<script type="text/ecmascript-6">
+import articleEdit from '@/components/articleEdit'
 import commentNum from '@/components/commentNum'
 import comment from '@/components/comment'
 export default {
   data () {
     return {
-      list: [1, 2, 3]
+
     }
   },
   components: {
-    communityList,
+    articleEdit,
     commentNum,
     comment
   }
 }
 </script>
 
-<style lang='scss'>
+<style scoped lang="scss">
+.look{
+  @include btn_s(200px, 40px, 20px, 5px);
+}
 </style>
