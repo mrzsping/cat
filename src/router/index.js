@@ -48,7 +48,7 @@ export default new Router({
           ]
         },
         {
-          path: '/mine',
+          path: 'mine',
           name: 'mine',
           component: mine
         }
