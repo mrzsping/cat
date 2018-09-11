@@ -10,6 +10,11 @@ const community = r => require.ensure([], () => r(require('@/pages/community')),
 const list = r => require.ensure([], () => r(require('@/pages/community/list')), 'list')
 const article = r => require.ensure([], () => r(require('@/pages/article')), 'article')
 const mine = r => require.ensure([], () => r(require('@/pages/mine')), 'mine')
+const person = r => require.ensure([], () => r(require('@/pages/mine/minePage/person')), 'mine')
+const notice = r => require.ensure([], () => r(require('@/pages/mine/minePage/notice')), 'mine')
+const collection = r => require.ensure([], () => r(require('@/pages/mine/minePage/collection')), 'mine')
+const adoption = r => require.ensure([], () => r(require('@/pages/mine/minePage/adoption')), 'mine')
+const aboutme = r => require.ensure([], () => r(require('@/pages/mine/minePage/aboutme')), 'mine')
 
 Vue.use(Router)
 
@@ -48,9 +53,46 @@ export default new Router({
           ]
         },
         {
+          path: 'diary',
+          name: 'diary',
+          component: mine
+        },
+        {
+          path: 'publish',
+          name: 'publish',
+          component: mine
+        },
+        {
           path: 'mine',
           name: 'mine',
-          component: mine
+          component: mine,
+          children: [
+            {
+              path: 'person',
+              name: 'person',
+              component: person
+            },
+            {
+              path: 'notice',
+              name: 'notice',
+              component: notice
+            },
+            {
+              path: 'collection',
+              name: 'collection',
+              component: collection
+            },
+            {
+              path: 'adoption',
+              name: 'adoption',
+              component: adoption
+            },
+            {
+              path: 'aboutme',
+              name: 'aboutme',
+              component: aboutme
+            }
+          ]
         }
       ]
     },

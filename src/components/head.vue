@@ -19,7 +19,7 @@
        <router-link to="/page/publish">发布</router-link>
      </li>
      <li>
-       <router-link to="/page/mine">我的</router-link>
+       <router-link to="/page/mine/person">我的</router-link>
      </li>
    </ul>
    <div class="fr">

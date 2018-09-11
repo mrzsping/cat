@@ -7,21 +7,23 @@
           <router-link to="/page/mine/person" class="active">个人资料</router-link>
         </li>
         <li>
-          <router-link to="/page/mine/person">消息通知</router-link>
+          <router-link to="/page/mine/notice">消息通知</router-link>
         </li>
         <li>
-          <router-link to="/page/mine/person">我的收藏</router-link>
+          <router-link to="/page/mine/collection">我的收藏</router-link>
         </li>
         <li>
-          <router-link to="/page/mine/person">关于领养</router-link>
+          <router-link to="/page/mine/adoption">关于领养</router-link>
         </li>
         <li>
-          <router-link to="/page/mine/person">关我和喵星人</router-link>
+          <router-link to="/page/mine/aboutme">关我和喵星人</router-link>
         </li>
       </ul>
     </div>
     <div class="fr setting-view">
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -39,9 +41,11 @@ export default {
 
 <style lang='scss'>
 .mine{
-  width: 1000px;
-  height: 600px;
+  width: 1100px;
+  height: 850px;
   margin: 60px auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   .setting{
     .setting-list{
       li{
@@ -49,6 +53,10 @@ export default {
         a{
           color: $c6;
           font-size: 14px;
+          &:hover{
+            color: $btnBg;
+            cursor: pointer;
+          }
         }
         >.active{
           color: $btnBg;
@@ -57,7 +65,7 @@ export default {
     }
   }
   .setting-view{
-    @include con(800px, 400px);
+    width: 900px;
     border: 1px solid #f00;
   }
 }
