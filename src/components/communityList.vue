@@ -8,7 +8,7 @@
           <p>
             123131313communitycommunitycommunitycommunitycommunitycommunitycommunity
           </p>
-          <router-link to="/page/community/article" class="fr">查看全文</router-link>
+          <router-link :to="linkTo" class="fr">查看全文</router-link>
         </div>
         <img src="@/assets/images/1.jpg" alt="" class="fr" width="180px" height="180px">
       </div>
@@ -25,7 +25,8 @@ export default {
     }
   },
   components: {
-  }
+  },
+  props: ['linkTo']
 }
 </script>
 

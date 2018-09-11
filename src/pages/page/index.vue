@@ -2,17 +2,6 @@
   <div class="index">
     <headTop></headTop>
     <router-view>
-        <div class="index-head">
-        </div>
-        <div class="content">
-          <div class="find">
-            <h2>寻找喵星人</h2>
-          </div>
-          <search></search>
-          <div class="index-list">
-            <indexList :list="indexData" v-for="i in indexData" :key="i.id"></indexList>
-          </div>
-        </div>
     </router-view>
     <FootBottom></FootBottom>
   </div>
