@@ -1,6 +1,6 @@
 <template>
   <div class="diary-list">
-    <diaryItem v-for="item in diaryData" :key="item.id" :linkTo="'/page/diary/'+item+'/edit'"></diaryItem>
+    <diaryItem v-for="item in diaryData" :key="item.id" :linkTo="'/page/diary/edit/'+item"></diaryItem>
   </div>
 </template>
 

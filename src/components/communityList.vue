@@ -32,7 +32,7 @@ export default {
 
 <style lang='scss'>
 .community-item{
-  @include box(1000px, auto, 1);
+  @include box(100%, auto, 1);
   margin: 20px 0;
   .community-wrapper{
     height: 250px;
@@ -51,11 +51,11 @@ export default {
       }
     }
     .content{
-      @include box(1000px, 180px, 1);
+      @include box(100%, 180px, 1);
       padding: 0 20px 0 30px;
       box-sizing: border-box;
       >.fl{
-        @include con(720px, 180px);
+        @include con(72%, 180px);
         margin-right: 50px;
         p{
           height: 160px;

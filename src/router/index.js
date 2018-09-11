@@ -18,6 +18,7 @@ const aboutme = r => require.ensure([], () => r(require('@/pages/mine/minePage/a
 const diary = r => require.ensure([], () => r(require('@/pages/diary')), 'diary')
 const diaryList = r => require.ensure([], () => r(require('@/pages/diary/diaryList')), 'diary')
 const diaryEdit = r => require.ensure([], () => r(require('@/pages/diary/diaryEdit')), 'diary')
+const publish = r => require.ensure([], () => r(require('@/pages/publish')), 'publish')
 
 Vue.use(Router)
 
@@ -49,7 +50,7 @@ export default new Router({
               component: list
             },
             {
-              path: 'article',
+              path: 'article/:id',
               name: 'article',
               component: article
             }
@@ -66,7 +67,7 @@ export default new Router({
               component: diaryList
             },
             {
-              path: ':id/edit',
+              path: 'edit/:id ',
               name: 'edit',
               component: diaryEdit
             }
@@ -75,7 +76,7 @@ export default new Router({
         {
           path: 'publish',
           name: 'publish',
-          component: mine
+          component: publish
         },
         {
           path: 'mine',

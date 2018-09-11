@@ -41,6 +41,7 @@ export default {
     >.header{
       width: 800px;
       margin: auto;
+      overflow: hidden;
       .me-and-cat, .find-owner{
         h4{
           cursor: pointer;

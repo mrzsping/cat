@@ -1,6 +1,6 @@
 <template>
   <div>
-    <communityList v-for="x in list" :key="x.id">
+    <communityList v-for="x in list" :key="x.id" :linkTo="'/page/community/article/'+x">
       <commentNum slot="num"></commentNum>
       <comment slot="comment"></comment>
     </communityList>

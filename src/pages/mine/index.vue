@@ -66,7 +66,6 @@ export default {
   }
   .setting-view{
     width: 900px;
-    border: 1px solid #f00;
   }
 }
 </style>
