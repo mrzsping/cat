@@ -67,14 +67,19 @@ export default new Router({
               component: diaryList
             },
             {
-              path: 'edit/:id ',
+              path: 'diaryFindList',
+              name: 'diaryFindList',
+              component: diaryList
+            },
+            {
+              path: ':name/edit/:id',
               name: 'edit',
               component: diaryEdit
             }
           ]
         },
         {
-          path: 'publish',
+          path: 'publish/:name',
           name: 'publish',
           component: publish
         },

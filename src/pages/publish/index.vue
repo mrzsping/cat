@@ -2,11 +2,19 @@
   <div class="publish">
       <div class="header">
         <div class="me-and-cat fl">
-          <h4>我和喵星人的故事</h4>
+          <h4>
+            <router-link to="/page/publish/me-and-cat">
+              我和喵星人的故事
+            </router-link>
+          </h4>
           <i class="iconfont icon-sanjiaoxing"></i>
         </div>
         <div class="find-owner fr">
-          <h4>为喵星人寻找主主人</h4>
+          <h4>
+            <router-link to="/page/publish/find-owner">
+              为喵星人寻找主主人
+            </router-link>
+          </h4>
           <i class="iconfont icon-sanjiaoxing"></i>
         </div>
       </div>

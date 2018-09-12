@@ -1,6 +1,6 @@
 <template>
   <div class="diary-list">
-    <diaryItem v-for="item in diaryData" :key="item.id" :linkTo="'/page/diary/edit/'+item"></diaryItem>
+    <diaryItem v-for="item in diaryData" :key="item.id" :linkTo="'/page/diary/'+urlName+'/edit/'+item"></diaryItem>
   </div>
 </template>
 
@@ -14,7 +14,13 @@ export default {
   },
   components: {
     diaryItem
+  },
+  computed: {
+    urlName: function () {
+      return this.$route.path.split('/').reverse()[0]
+    }
   }
+
 }
 </script>
 

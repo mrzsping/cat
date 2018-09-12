@@ -16,7 +16,7 @@
        <router-link to="/page/diary/diaryList">日记</router-link>
      </li>
      <li>
-       <router-link to="/page/publish">发布</router-link>
+       <router-link to="/page/publish/me-and-cat">发布</router-link>
      </li>
      <li>
        <router-link to="/page/mine/person">我的</router-link>
