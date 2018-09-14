@@ -6,20 +6,8 @@
      <p>每一只猫咪都值得被爱</p>
    </div>
    <ul class="link">
-     <li class="active">
-       <router-link to="/page/index">首页</router-link>
-     </li>
-     <li>
-       <router-link to="/page/community/list">社区</router-link>
-     </li>
-     <li>
-       <router-link to="/page/diary/diaryList">日记</router-link>
-     </li>
-     <li>
-       <router-link to="/page/publish/me-and-cat">发布</router-link>
-     </li>
-     <li>
-       <router-link to="/page/mine/person">我的</router-link>
+     <li v-for="(item, index) in linkData" :key="index" :class="{active: currentIndex === index}" @click="changePage(index)">
+       <router-link :to="item.link">{{item.name}}</router-link>
      </li>
    </ul>
    <div class="fr">
@@ -37,9 +25,30 @@
 export default {
   data () {
     return {
+      linkData: [
+        { link: '/page/index', name: '首页' },
+        { link: '/page/community/list', name: '社区' },
+        { link: '/page/diary/diaryList', name: '日记' },
+        { link: '/page/publish/me-and-cat', name: '发布' },
+        { link: '/page/mine/person', name: '我的' }
+      ],
+      currentIndex: 0
     }
   },
   components: {
+  },
+  methods: {
+    changePage (index) {
+      this.currentIndex = index
+    }
+  },
+  mounted () {
+    console.log(this.$route.path.split('/').reverse()[0])
+    this.linkData.forEach((i, n) => {
+      if (i.link === this.$route.path) {
+        this.currentIndex = n
+      }
+    })
   }
 }
 </script>

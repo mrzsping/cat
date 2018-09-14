@@ -1,8 +1,9 @@
 <template>
   <div class="index">
     <headTop></headTop>
-    <router-view>
-    </router-view>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
     <FootBottom></FootBottom>
   </div>
 </template>

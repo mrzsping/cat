@@ -24,8 +24,9 @@
         <h2><span>我爱喵星人</span>的日记</h2>
       </div>
     </div>
-    <router-view>
-    </router-view>
+    <keep-alive>
+      <router-view />
+    </keep-alive>
   </div>
 </template>
 
