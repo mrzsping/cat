@@ -1,9 +1,9 @@
 <template>
  <div class="forget">
     <titleTemplate titleName = '欢迎加入公益猫' pageName = '修改密码'></titleTemplate>
-    <inputTemplate first="昵称:" placeholderName="请输入你的昵称" type="text"></inputTemplate>
+    <!-- <inputTemplate first="昵称:" placeholderName="请输入你的昵称" type="text"></inputTemplate>
     <inputTemplate first="新密码:" placeholderName="请输入你的密码" type="password"></inputTemplate>
-    <inputTemplate first="重复密码:" placeholderName="请输入你的密码" type="text"></inputTemplate>
+    <inputTemplate first="重复密码:" placeholderName="请输入你的密码" type="text"></inputTemplate> -->
     <identify>
     </identify>
     <button class="submit mt30">注册帐号</button>
@@ -15,7 +15,7 @@
 
 <script>
 import titleTemplate from '@/components/title'
-import inputTemplate from '@/components/input'
+// import inputTemplate from '@/components/input'
 import identify from '@/components/identify'
 export default {
   data () {
@@ -24,7 +24,7 @@ export default {
   },
   components: {
     titleTemplate,
-    inputTemplate,
+    // inputTemplate,
     identify
   }
 }
