@@ -28,9 +28,17 @@ export default {
     indexList
   },
   mounted () {
-    this.$axios.get('/api/list').then((data) => {
-      this.indexData = data.data.list
-    })
+    this.init()
+  },
+  methods: {
+    init () {
+      this.$axios.get('/api/list').then((data) => {
+        this.indexData = data.data.list
+      })
+    }
+  },
+  watch: {
+    '$route': 'init'
   }
 }
 </script>

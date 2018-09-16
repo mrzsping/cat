@@ -4,10 +4,10 @@
     <div class="index-con">
       <div class="fl">
         <img src="@/assets/images/1.jpg" alt="" width="32px" height="32px">
-        <span>{{list.content}}</span>
+        <span>{{list.name}}</span>
       </div>
       <div class="fr">
-        <i class="iconfont icon-aixin"></i>
+        <i class="iconfont icon-aixin" :class="{'red': list.love}"></i>
         <i class="iconfont icon-xinxi"></i>
       </div>
     </div>
@@ -41,6 +41,12 @@ export default {
     img{
       border-radius: 50%;
       vertical-align: middle;
+    }
+    i{
+      cursor: pointer;
+    }
+    .red{
+      color: red;
     }
   }
 }

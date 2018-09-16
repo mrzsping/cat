@@ -15,7 +15,14 @@
       </div>
       <span class="error-msg" v-show="passwordError">{{passwordError}}</span>
     </div>
-    <identify />
+    <div class="input">
+      <div class="input-box identify">
+        <label for=''>验证码</label>
+        <input type="text" placeholder='请输入验证码'>
+        <button @click="getCode">{{count}}</button>
+      </div>
+      <span class="error-msg" v-show="passwordError">{{passwordError}}</span>
+    </div>
     <p class="self mt25">点击注册帐号，表示同意 <a href="">服务条款</a> 和 <a href="">隐私条款</a> </p>
     <button class="submit mt30" @click="signup">注册帐号</button>
     <p class="already mt25">已有账号，直接
@@ -27,7 +34,6 @@
 <script type="text/ecmascript-6">
 // import { toSignup } from '@/service/getData'
 import titleTemplate from '@/components/title'
-import identify from '@/components/identify'
 import { md5, setStore } from '@/methods'
 
 export default {
@@ -36,13 +42,15 @@ export default {
       username: '', // 用户名
       password: '', // 密码
       nameError: '', // 用户名错误
-      passwordError: '' // 密码错误
+      passwordError: '', // 密码错误
+      identifyNumber: '获取验证码',
+      show: true,
+      count: 60,
+      timer: null
     }
   },
   components: {
-    titleTemplate,
-    // inputTemplate,
-    identify
+    titleTemplate
   },
   methods: {
     signup () {
@@ -72,6 +80,38 @@ export default {
           this.$router.push('login')
         }
       })
+    },
+    // getIdentify () {
+    //   // if (this.time === 0) {
+    //   //   this.identifyNumber = '重新获取验证码'
+    //   // } else {
+    //   //   setTimeout(function () {
+    //   //     // this.identifyNumber = this.time--
+    //   //     this.identifyNumber = '重新获取验证码'
+    //   //   }, 1000)
+    //   // }
+    //   let time = 60
+    //   setInterval(function () {
+    //     if (time <= 60) {
+    //       this.identifyNumber = '重新获取'
+    //     } else {
+    //       this.identifyNumber = '重新获取'
+    //     }
+    //   }, 1000)
+    // }
+    getCode () {
+      const TIME_COUNT = 60
+      if (!this.timer) {
+        // this.count = TIME_COUNT
+        setInterval(() => {
+          if (this.count > 0 && this.count <= TIME_COUNT) {
+            this.count--
+          } else {
+            // clearInterval(this.timer)
+            // this.timer = null
+          }
+        }, 1000)
+      }
     }
   }
 }
@@ -100,6 +140,22 @@ export default {
         width: 210px;
         height: 30px;
         font-size: 18px;
+      }
+    }
+    .identify{
+      label{
+        float: left;
+        width: 105px;
+        text-align: left;
+        font-size: 22px;
+      }
+      input{
+        width: 120px;
+        height: 30px;
+        font-size: 18px;
+      }
+      button{
+        @include btn(95px,28px, 14px, 5px);
       }
     }
     .error-msg{

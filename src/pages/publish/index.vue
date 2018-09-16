@@ -2,24 +2,21 @@
   <div class="publish">
       <div class="header">
         <div class="me-and-cat fl">
-          <h4>
-            <router-link to="/page/publish/me-and-cat">
-              我和喵星人的故事
-            </router-link>
+          <h4 @click="change">
+            我和喵星人的故事
           </h4>
-          <i class="iconfont icon-sanjiaoxing"></i>
+          <i class="iconfont icon-sanjiaoxing" v-show="icon"></i>
         </div>
         <div class="find-owner fr">
-          <h4>
-            <router-link to="/page/publish/find-owner">
-              为喵星人寻找主主人
-            </router-link>
+          <h4 @click="changeI">
+            为喵星人寻找主主人
           </h4>
-          <i class="iconfont icon-sanjiaoxing"></i>
+          <i class="iconfont icon-sanjiaoxing" v-show="!icon"></i>
         </div>
       </div>
       <div class="publish-content">
         <form action="">
+          <input type="text" placeholder="标题" class="title" v-model="title">
           <textarea name="" id="" resize="none" v-model="wordEdit">
           </textarea>
           <div class="pic">
@@ -35,7 +32,7 @@
             <img :src="urlShow" alt="" width="400px" height="400px" class="fr">
           </div>
         </form>
-        <button class="publish-btn">发布</button>
+        <button class="publish-btn" @click="pushArticle">发布</button>
       </div>
     <router-view>
     </router-view>
@@ -43,12 +40,15 @@
 </template>
 
 <script type="text/ecmascript-6">
+import { getStore } from '@/methods'
 export default {
   data () {
     return {
       list: [1, 2, 1, 2, 2, 1, 2],
       wordEdit: '',
-      urlShow: ''
+      urlShow: '',
+      icon: true,
+      title: ''
     }
   },
   components: {
@@ -56,6 +56,32 @@ export default {
   methods: {
     changeUrl (i) {
       this.urlShow = `/static/img/${i}.jpg`
+    },
+    change () {
+      this.$router.push('/page/publish/me-and-cat')
+      this.icon = true
+    },
+    changeI () {
+      this.$router.push('/page/publish/find-owner')
+      this.icon = false
+    },
+    pushArticle () {
+      let content = this.wordEdit
+      let title = this.title
+      let name = getStore('user')
+      this.$axios.get('/api/list/publish', {
+        params: {
+          content: content,
+          title: title,
+          name: name,
+          love: ''
+        }
+      }).then((data) => {
+        if (data.data.state_type === 'success') {
+          console.log(data.data.state_type)
+          this.$router.push('/page/index')
+        }
+      })
     }
   },
   mounted () {
@@ -85,6 +111,16 @@ export default {
   .publish-content{
     margin-top: 30px;
     text-align: center;
+    .title{
+      width: 600px;
+      height: 32px;
+      float: left;
+      margin: 10px 0;
+      border: 1px solid #a9a9a9;
+      border-radius: 5px;
+      text-indent: 10px;
+      font-size: 16px;
+    }
     textarea{
       width: 100%;
       height: 180px;

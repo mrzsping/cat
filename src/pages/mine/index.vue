@@ -2,28 +2,26 @@
   <div class="mine">
     <div class="setting fl">
       <h4>设置</h4>
-      <ul class="setting-list">
-        <li>
-          <router-link to="/page/mine/person" class="active">个人资料</router-link>
+      <ul class="setting-list" @click="linkMine">
+        <li data-id="0">
+          <router-link to="/page/mine/person" :class="{'active': current === 0}">个人资料</router-link>
         </li>
-        <li>
-          <router-link to="/page/mine/notice">消息通知</router-link>
+        <li data-id="1">
+          <router-link to="/page/mine/notice" :class="{'active': current === 1}">消息通知</router-link>
         </li>
-        <li>
-          <router-link to="/page/mine/collection">我的收藏</router-link>
+        <li data-id="2">
+          <router-link to="/page/mine/collection" :class="{'active': current === 2}">我的收藏</router-link>
         </li>
-        <li>
-          <router-link to="/page/mine/adoption">关于领养</router-link>
+        <li data-id="3">
+          <router-link to="/page/mine/adoption" :class="{'active': current === 3}">关于领养</router-link>
         </li>
-        <li>
-          <router-link to="/page/mine/aboutme">关我和喵星人</router-link>
+        <li data-id="4">
+          <router-link to="/page/mine/aboutme" :class="{'active': current === 4}">关我和喵星人</router-link>
         </li>
       </ul>
     </div>
     <div class="fr setting-view">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -32,10 +30,29 @@
 export default {
   data () {
     return {
+      current: 0
     }
   },
   components: {
+  },
+  methods: {
+    linkMine (e) {
+      if (e.target.nodeName.toLowerCase() === 'a') {
+        this.current = Number(e.target.parentNode.dataset.id)
+      }
+    }
   }
+  // beforeCreate () {
+  //   console.log(111)
+  //   if (this.$route.path.toString() === '/page/mine/person') {
+  //     this.current = 0
+  //   }
+  // },
+  // beforeRouteUpdate (to, from, next) {
+  //   // this.$router.push(to.path)
+  //   // // console.log(from, to.path)
+  //   // next()
+  // }
 }
 </script>
 

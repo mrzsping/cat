@@ -3,20 +3,16 @@
     <div class="diary-cat">
       <div class="header">
         <div class="me-and-cat fl">
-          <h4>
-            <router-link to="/page/diary/diaryList">
+          <h4 @click="change">
               我和喵星人的故事
-            </router-link>
           </h4>
-          <i class="iconfont icon-sanjiaoxing"></i>
+          <i class="iconfont icon-sanjiaoxing" v-show="icon"></i>
         </div>
         <div class="find-owner fr">
-          <h4>
-            <router-link to="/page/diary/diaryFindList">
+          <h4 @click="changeI">
               为喵星人寻找主主人
-            </router-link>
           </h4>
-          <i class="iconfont icon-sanjiaoxing"></i>
+          <i class="iconfont icon-sanjiaoxing" v-show="!icon"></i>
         </div>
       </div>
       <div class="diary-img">
@@ -34,9 +30,20 @@
 export default {
   data () {
     return {
+      icon: true
     }
   },
   components: {
+  },
+  methods: {
+    change () {
+      this.$router.push('/page/diary/diaryList')
+      this.icon = true
+    },
+    changeI () {
+      this.$router.push('/page/diary/diaryFindList')
+      this.icon = false
+    }
   }
 }
 </script>
