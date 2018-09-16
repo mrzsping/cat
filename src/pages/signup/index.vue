@@ -4,7 +4,7 @@
     <div class="input">
       <div class="input-box">
         <label for=''>昵称</label>
-        <input type='text' placeholder='请输入你的昵称' v-model="username">
+        <input type='text' maxlength="10" placeholder='6-10位字母、数字、字符' v-model="username">
       </div>
       <span class="error-msg" v-show="nameError">{{nameError}}</span>
     </div>
@@ -28,7 +28,8 @@
 // import { toSignup } from '@/service/getData'
 import titleTemplate from '@/components/title'
 import identify from '@/components/identify'
-import crypto from 'crypto'
+import { md5, setStore } from '@/methods'
+
 export default {
   data () {
     return {
@@ -45,19 +46,32 @@ export default {
   },
   methods: {
     signup () {
+      if (this.username.replace(/\s/g, '').length === 0) {
+        this.nameError = '用户名不能为空'
+        return false
+      } else if (this.username.replace(/\s/g, '').length <= 3) {
+        this.nameError = '用户名不能小于4位'
+        return false
+      }
+      if (this.password.replace(/\s/g, '').length === 0) {
+        this.passwordError = '密码不能为空'
+        return false
+      } else if (this.password.replace(/\s/g, '').length <= 5) {
+        this.passwordError = '密码不能小于6位'
+        return false
+      }
       this.$axios.get('/api/signup', {
         params: {
           name: this.username,
-          password: this.toMd5(this.password)
+          password: md5(this.password)
         }
       }).then((data) => {
         this.nameError = data.data.message
+        if (data.data.state_type === 'success') {
+          setStore(data.data.name)
+          this.$router.push('login')
+        }
       })
-    },
-    toMd5 (password) {
-      const md5 = crypto.createHash('md5')
-      md5.update(password)
-      return md5.digest('hex')
     }
   }
 }

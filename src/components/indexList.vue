@@ -4,7 +4,7 @@
     <div class="index-con">
       <div class="fl">
         <img src="@/assets/images/1.jpg" alt="" width="32px" height="32px">
-        <span>123</span>
+        <span>{{list.content}}</span>
       </div>
       <div class="fr">
         <i class="iconfont icon-aixin"></i>

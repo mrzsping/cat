@@ -8,7 +8,7 @@
       </div>
       <search></search>
       <div class="index-list">
-        <indexList :list="indexData" v-for="i in indexData" :key="i.id"></indexList>
+        <indexList :list="i" v-for="i in indexData" :key="i.id"></indexList>
       </div>
     </div>
   </div>
@@ -26,6 +26,11 @@ export default {
   components: {
     search,
     indexList
+  },
+  mounted () {
+    this.$axios.get('/api/list').then((data) => {
+      this.indexData = data.data.list
+    })
   }
 }
 </script>

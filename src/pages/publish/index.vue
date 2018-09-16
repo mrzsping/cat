@@ -20,20 +20,19 @@
       </div>
       <div class="publish-content">
         <form action="">
-          <textarea name="" id="" resize="none">
-          12311111111111111111111111111111
+          <textarea name="" id="" resize="none" v-model="wordEdit">
           </textarea>
           <div class="pic">
             <div class="pic-fl">
               <button>点击添加图片</button>
               <ul class="pic-list">
-                <li v-for="i in list" :key="i.id">
-                  <img src="@/assets/images/1.jpg" alt="" width="80px" height="80px">
+                <li v-for="i in list" :key="i.id" @click="changeUrl(i)">
+                  <img :src="'/static/img/'+i+'.jpg'" alt="" width="80px" height="80px">
                 </li>
               </ul>
               <input class="position" type="text" placeholder="所在位置">
             </div>
-            <img src="@/assets/images/1.jpg" alt="" width="400px" height="400px" class="fr">
+            <img :src="urlShow" alt="" width="400px" height="400px" class="fr">
           </div>
         </form>
         <button class="publish-btn">发布</button>
@@ -47,10 +46,20 @@
 export default {
   data () {
     return {
-      list: [1, 2, 4, 5, 6, 7, 78, 8, 3]
+      list: [1, 2, 1, 2, 2, 1, 2],
+      wordEdit: '',
+      urlShow: ''
     }
   },
   components: {
+  },
+  methods: {
+    changeUrl (i) {
+      this.urlShow = `/static/img/${i}.jpg`
+    }
+  },
+  mounted () {
+    this.urlShow = '/static/img/1.jpg'
   }
 }
 </script>
@@ -89,18 +98,22 @@ export default {
         float: left;
         width: 500px;
         height: auto;
+        text-align: left;
         button{
           @include btn(120px, 30px, 14px, 5px);
         }
         .pic-list{
+          padding: 20px;
           width: 300px;
           height: 300px;
-          margin: 30px auto;
+          margin: 45px auto;
+          border: 1px solid #ccc;
           li{
             float: left;
             margin-right: 30px;
             margin-bottom: 30px;
             font-size: 0;
+            cursor: pointer;
           }
           li:nth-of-type(3n){
             margin: 0;
