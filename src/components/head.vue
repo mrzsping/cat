@@ -7,7 +7,7 @@
     </div>
     <ul class="link">
       <li v-for="(item, index) in linkData" :key="index" :class="{active: currentIndex === index}" @click="changePage(index)" v-if="item.show > showNum">
-        <router-link :to="item.link">{{item.name}}</router-link>
+        <router-link :to="item.link + '' + person">{{item.name}}</router-link>
       </li>
     </ul>
     <div class="fr" v-if="!user">
@@ -73,6 +73,15 @@ export default {
     this.user = getStore('user')
     if (!this.user) {
       this.showNum = 1
+    }
+  },
+  computed: {
+    person: function (index) {
+      return this.linkData.map((item, index) => {
+        if (index > 2) {
+          item.link = item.link + this.user
+        }
+      })
     }
   }
 }

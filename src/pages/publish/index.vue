@@ -16,7 +16,7 @@
       </div>
       <div class="publish-content">
         <form action="">
-          <input type="text" placeholder="标题" class="title" v-model="title">
+          <input type="text" placeholder="标题"  class="title" v-model="title">
           <textarea name="" id="" resize="none" v-model="wordEdit">
           </textarea>
           <div class="pic">
@@ -48,7 +48,8 @@ export default {
       wordEdit: '',
       urlShow: '',
       icon: true,
-      title: ''
+      title: '',
+      type: 'cat'
     }
   },
   components: {
@@ -60,21 +61,27 @@ export default {
     change () {
       this.$router.push('/page/publish/me-and-cat')
       this.icon = true
+      this.type = 'cat'
     },
     changeI () {
       this.$router.push('/page/publish/find-owner')
       this.icon = false
+      this.type = 'find'
     },
     pushArticle () {
       let content = this.wordEdit
       let title = this.title
       let name = getStore('user')
+      let type = this.type
+      let time = (new Date()).getTime()
       this.$axios.get('/api/list/publish', {
         params: {
           content: content,
           title: title,
           name: name,
-          love: ''
+          love: false,
+          type: type,
+          time: time
         }
       }).then((data) => {
         if (data.data.state_type === 'success') {

@@ -30,3 +30,10 @@ export const setStore = (value) => {
 export const getStore = (name) => {
   return window.sessionStorage.getItem(name)
 }
+/**
+ * @param  {number} value
+ */
+export const getDate = (value) => {
+  let date = new Date()
+  return `${date.getFullYear(value)}年${date.getMonth()}月${date.getDay + 1}日 ${date.getHours} : ${date.getMinutes} : ${date.getSeconds}`
+}
