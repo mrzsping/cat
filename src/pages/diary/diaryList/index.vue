@@ -1,6 +1,6 @@
 <template>
   <div class="diary-list">
-    <diaryItem v-for="item in diaryData" :key="item.id" :linkTo="'/page/diary/'+urlName+'/edit/'+item"></diaryItem>
+    <diaryItem v-for="item in diaryData" :item="item" :key="item.id" :linkTo="'/page/diary/'+urlName+'/edit/'+item"></diaryItem>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ import diaryItem from '@/components/communityList'
 export default {
   data () {
     return {
-      diaryData: [1, 2, 3]
+      diaryData: []
     }
   },
   components: {
@@ -19,6 +19,20 @@ export default {
     urlName: function () {
       return this.$route.path.split('/').reverse()[0]
     }
+  },
+  methods: {
+    meAndCat () {
+      this.$axios.get('/api/article', {
+        params: {
+          type: 'cat'
+        }
+      }).then((res) => {
+        this.diaryData = res.data.result
+      })
+    }
+  },
+  mounted () {
+    this.meAndCat()
   }
 
 }

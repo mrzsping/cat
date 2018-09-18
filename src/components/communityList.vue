@@ -1,13 +1,11 @@
 <template>
   <div class="community-item">
     <div class="community-wrapper">
-      <p><i class="iconfont icon-icon1"></i>标题:<span>喵星人的成长故事</span>
-      <span class="fr">2018年8月11日 10:12</span></p>
+      <p><i class="iconfont icon-icon1"></i>标题:<span>{{item.title}}</span>
+      <span class="fr"></span></p>
       <div class="content">
         <div class="fl">
-          <p>
-            123131313communitycommunitycommunitycommunitycommunitycommunitycommunity
-          </p>
+          <p>{{item.content}}</p>
           <router-link :to="linkTo" class="fr">查看全文</router-link>
         </div>
         <img src="@/assets/images/1.jpg" alt="" class="fr" width="180px" height="180px">
@@ -19,6 +17,7 @@
 </template>
 
 <script>
+import { getDate } from '@/methods'
 export default {
   data () {
     return {
@@ -26,7 +25,12 @@ export default {
   },
   components: {
   },
-  props: ['linkTo']
+  props: ['linkTo', 'item'],
+  computed: {
+    date () {
+      return getDate(item.time)
+    }
+  }
 }
 </script>
 
