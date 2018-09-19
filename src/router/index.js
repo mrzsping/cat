@@ -62,7 +62,7 @@ export default new Router({
           component: diary,
           children: [
             {
-              path: 'diaryList/:name',
+              path: 'diaryList',
               name: 'diaryList',
               component: diaryList
             },
