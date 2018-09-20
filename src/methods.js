@@ -34,6 +34,6 @@ export const getStore = (name) => {
  * @param  {number} value
  */
 export const getDate = (value) => {
-  let date = new Date()
-  return `${date.getFullYear(value)}年${date.getMonth()}月${date.getDay + 1}日 ${date.getHours} : ${date.getMinutes} : ${date.getSeconds}`
+  let date = new Date(value)
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate() + 1}日 ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 }

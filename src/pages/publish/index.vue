@@ -27,7 +27,7 @@
                   <img :src="'/static/img/'+i+'.jpg'" alt="" width="80px" height="80px">
                 </li>
               </ul>
-              <input class="position" type="text" placeholder="所在位置">
+              <input class="position" v-model="position" type="text" placeholder="所在位置">
             </div>
             <img :src="urlShow" alt="" width="400px" height="400px" class="fr">
           </div>
@@ -93,6 +93,14 @@ export default {
   },
   mounted () {
     this.urlShow = '/static/img/1.jpg'
+  },
+  watch: {
+    '$route': function () {
+      this.title = ''
+      this.wordEdit = ''
+      this.position = ''
+      this.list = ''
+    }
   }
 }
 </script>

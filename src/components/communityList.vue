@@ -2,7 +2,7 @@
   <div class="community-item">
     <div class="community-wrapper">
       <p><i class="iconfont icon-icon1"></i>标题:<span>{{item.title}}</span>
-      <span class="fr"></span></p>
+      <span class="fr">{{item.time | getDate}}</span></p>
       <div class="content">
         <div class="fl">
           <p>{{item.content}}</p>
@@ -27,9 +27,9 @@ export default {
   },
   props: ['linkTo', 'item'],
   computed: {
-    date () {
-      return getDate(item.time)
-    }
+  },
+  filters: {
+    getDate: getDate
   }
 }
 </script>

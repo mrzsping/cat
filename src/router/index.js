@@ -79,9 +79,20 @@ export default new Router({
           ]
         },
         {
-          path: 'publish/:name',
+          path: 'publish/me-and-cat',
           name: 'publish',
-          component: publish
+          component: publish,
+          meta: {
+            catAndMe: true
+          }
+        },
+        {
+          path: 'publish/find-owner',
+          name: 'publish',
+          component: publish,
+          meta: {
+            catAndMe: false
+          }
         },
         {
           path: 'mine',
