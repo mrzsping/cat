@@ -27,6 +27,12 @@ export default {
   },
   props: ['linkTo', 'item'],
   computed: {
+<<<<<<< HEAD
+=======
+    // date () {
+    //   return getDate(item.time)
+    // }
+>>>>>>> f7a0bd6dfc3f74129327918817591171af7a4906
   },
   filters: {
     getDate: getDate
