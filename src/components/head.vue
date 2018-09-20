@@ -77,7 +77,11 @@ export default {
   },
   computed: {
     // person: function (index) {
-    //   return this.linkData[index]
+    //   return this.linkData.map((item, index) => {
+    //     if (index > 2) {
+    //       item.link = item.link + this.user
+    //     }
+    //   })
     // }
   }
 }
